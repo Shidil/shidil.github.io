@@ -21,7 +21,7 @@
     <section class="slide front-page">
         <div>
             <div class="logo" style="float: left;width: 50%;margin-top: 8%; text-align: center">
-                <img src="http://underscorejs.org/docs/images/underscore.png" width="400"/>
+                <img alt="logo" src="http://underscorejs.org/docs/images/underscore.png" width="400"/>
             </div>
             <div class="content" style="float: left;width: 50%;margin-top: 7%">
                 <h2>Make your life easier</h2>
@@ -39,7 +39,7 @@
                 <code>getElementsByClassName = function(cl) {</code>
                 <code>  var retnode = [];</code>
                 <code>  var elem = this.getElementsByTagName('*');</code>
-                <code>  for (var i = 0; i < elem.length; i++) {</code>
+                <code>  for (var i = 0; i &lt; elem.length; i++) {</code>
                 <code>    if((' ' + elem[i].className + ' ').indexOf(' ' + cl + ' ') > -1) retnode.push(elem[i]);</code>
                 <code>  }</code>
                 <code>  return retnode;</code>
@@ -222,9 +222,9 @@ You can use <code>bind</code> and <code>bindAll</code> to invoke particular meth
             <h2>_.template is customizable</h2>
             <pre>
                 <code>_.<mark>templateSettings</mark> = {</code>
-                <code>    evaluate: /<\$([\s\S]+?)\$>/g,</code>
+                <code>    evaluate: /&lt;\$([\s\S]+?)\$&gt;/g,</code>
                 <code>    interpolate : /{{([\s\S]+?)}}/g,</code>
-                <code>    escape      : /<\$-([\s\S]+?)\$>/g</code>
+                <code>    escape      : /&lt;\$-([\s\S]+?)\$&gt;/g</code>
                 <code>};</code>
                 <code>var templ = _.template("&lt;h2&gt;{{ name }} is clever.&lt;/h2&gt;");</code>
                 <code><mark class="comment">&lt;h2&gt;Adam is clever.&lt;/h2&gt;</mark></code>
@@ -290,7 +290,7 @@ You can use <code>bind</code> and <code>bindAll</code> to invoke particular meth
 
     <section class="slide cover">
         <div>
-            <code>What about performance?</code>
+            <h2>What about performance?</h2>
             <img src="./themes/pictures/jsperf_each.jpg" alt="">
             <a href="http://jsperf.com/underscore-lazy-js-lodash-native">Ask jsPerf!</a>
         </div>
