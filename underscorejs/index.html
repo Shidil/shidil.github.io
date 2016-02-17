@@ -10,7 +10,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <link rel="stylesheet" href="themes/styles/material-16x10.css">
-    <link rel="stylesheet" href="themes/styles/warsawjs-theme.css">
+    <link rel="stylesheet" href="themes/styles/custom.css">
 </head>
 <body class="shower list">
     <header class="caption">
@@ -19,11 +19,11 @@
     </header>
 
     <section class="slide front-page">
-        <div>
-            <div class="logo" style="float: left;width: 50%;margin-top: 8%; text-align: center">
+        <div style="top: 13%; position: relative;">
+            <div class="logo">
                 <img alt="logo" src="http://underscorejs.org/docs/images/underscore.png" width="400"/>
             </div>
-            <div class="content" style="float: left;width: 50%;margin-top: 7%">
+            <div class="content">
                 <h2>Make your life easier</h2>
                 <!--<p>Shidil Eringa <a href="https://twitter.com/shidil">@Shidil</a></p>-->
             </div>
@@ -94,10 +94,8 @@
         </div>
     </section>
 
-    <section class="slide shout">
-        <div>
-            <h2>Give me some examples!</h2>
-        </div>
+    <section class="slide">
+        <h2 class="shout">Give me some examples!</h2>
     </section>
 
     <section class="slide">
@@ -288,29 +286,32 @@ You can use <code>bind</code> and <code>bindAll</code> to invoke particular meth
         </div>
     </section>
 
-    <section class="slide cover">
+    <section class="slide">
         <div>
             <h2>What about performance?</h2>
-            <img src="./themes/pictures/jsperf_each.jpg" alt="">
+            <!--<img src="pictures/jsperf_each.jpg" alt="">-->
             <a href="http://jsperf.com/underscore-lazy-js-lodash-native">Ask jsPerf!</a>
         </div>
     </section>
 
-    <section class="slide shout grow">
+    <section class="slide" data-timing="00:03">
+    	<h2 class="shout">Thank you!</h2>
+    </section>
+
+		<section class="slide">
         <div>
-            <h2>Thank you!</h2>
+            <h2>Credits</h2>
+            <ul>
+                <li><a href="http://adamminiuk.github.io/warsawjs-underscore-js-presentation">http://adamminiuk.github.io/warsawjs-underscore-js-presentation</a></li>
+                <li><a href="http://underscore.js/">Underscore.js</a></li>
+            </ul>
         </div>
     </section>
 
-
-
     <div class="progress">
-        <div></div>
     </div>
 
-    <script src="vendor/gamepad/gamepad.js"></script>
-    <script src="vendor/shower/shower.js"></script>
-    <script src="vendor/shower/shower.gamepad.js"></script>
+    <script src="vendor/shower/shower.min.js"></script>
 </body>
 </html>
 
