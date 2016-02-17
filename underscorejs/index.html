@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  	<title>Underscore.js</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="themes/styles/material-16x10.css">
+    <link rel="stylesheet" href="themes/styles/warsawjs-theme.css">
+</head>
+<body class="shower list">
+    <header class="caption">
+        <h1>Make your life easier</h1>
+        <p> - use Underscore.js</p>
+    </header>
+
+    <section class="slide front-page">
+        <div>
+            <div class="logo" style="float: left;width: 50%;margin-top: 8%; text-align: center">
+                <img src="http://underscorejs.org/docs/images/underscore.png" width="400"/>
+            </div>
+            <div class="content" style="float: left;width: 50%;margin-top: 7%">
+                <h2>Make your life easier</h2>
+                <!--<p>Shidil Eringa <a href="https://twitter.com/shidil">@Shidil</a></p>-->
+            </div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Can my coding life be easier?</h2>
+
+
+	    <pre>
+                <code>getElementsByClassName = function(cl) {</code>
+                <code>  var retnode = [];</code>
+                <code>  var elem = this.getElementsByTagName('*');</code>
+                <code>  for (var i = 0; i < elem.length; i++) {</code>
+                <code>    if((' ' + elem[i].className + ' ').indexOf(' ' + cl + ' ') > -1) retnode.push(elem[i]);</code>
+                <code>  }</code>
+                <code>  return retnode;</code>
+                <code>}; </code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>You know that!</h2>
+            <p>If you have ever used <a href="http://jquery.com/">jQuery</a></p>
+            <pre>
+                <code>$('.myClass');</code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>What Underscore.js is?</h2>
+            <p class="note">As we can read on the <a href="http://underscorejs.org/">underscorejs.org</a></p>
+            <p> It’s the answer to the question:</p>
+            <figure>
+                <blockquote><p>If I sit down in front of a blank HTML page, and want to start being productive immediately, what do I need?</p></blockquote>
+            </figure>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>How to start?</h2>
+            <pre>
+                <code>&lt;script src="<mark>//underscorejs.org/underscore-min.js</mark>"&gt;</code>
+                <code>&lt;/script&gt;</code>
+                <code><mark class="comment">&lt;!--Then we have object called _ --&gt;</mark></code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <a href="http://underscorejs.org" target="_blank"><h2>What's next?</h2></a>
+            <p>Underscore gives us some functions to use:</p>
+            <pre>
+                <code><mark>each</mark>, <mark>map</mark>, <mark>reduce</mark>, <mark>reduceRight</mark>, <mark>find</mark>, <mark>filter</mark>, <mark>where</mark>, </code>
+                <code><mark>findWhere</mark>, <mark>reject</mark>, <mark>every</mark>, <mark>some</mark>, <mark>contains</mark>, <mark>invoke</mark>, </code>
+                <code><mark>pluck</mark>, <mark>max</mark>, <mark>min</mark>, <mark>sortBy</mark>, <mark>groupBy</mark>, <mark>indexBy</mark>, <mark>countBy</mark>, </code>
+                <code><mark>shuffle</mark>, <mark>sample</mark>, <mark>toArray</mark>, <mark>size</mark>, <mark>partition</mark></code>
+            </pre>
+            <p class="note">These are only collection functions.</p>
+        </div>
+    </section>
+
+    <section class="slide shout">
+        <div>
+            <h2>Give me some examples!</h2>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>_.map</h2>
+            <pre>
+                <code>var chairs = [{color: "red", width: 150},</code>
+                <code>{color: "green", width: 130}, {color: "white", width: 160}];</code>
+                </pre>
+                <pre>
+                <code>_.<mark>map</mark>(chairs, function(chair) {</code>
+                <code>    return chair.color;</code>
+                <code>});</code>
+                <code><mark class="comment">["red", "green", "white"]</mark></code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>_.pluck</h2>
+            <pre>
+                <code>var chairs = [{color: "red", width: 150},</code>
+                <code>{color: "green", width: 130},</code>
+                <code>{color: "green", width: 130}, {color: "white", width: 160}];</code>
+            </pre>
+            <pre>
+                <code>var colors = _.<mark>pluck</mark>(chairs, "color");</code>
+                <code><mark class="comment">["red", "green", "green", "white"]</mark></code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>_.uniq</h2>
+            <pre>
+                <code>colors = _.<mark>uniq</mark>(colors);</code>
+                <code><mark class="comment">["green", "red", "white"]</mark></code>
+            </pre>
+            <h2>_.sortBy</h2>
+            <pre>
+                <code>_.<mark>sortBy</mark>(colors, "length");</code>
+                <code><mark class="comment">["red", "green", "white"]</mark></code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Functional / Object Oriented</h2>
+            <p>Both approaches _.UNDERSCORE_FUNCTION(obj) and _(obj).UNDERSCORE_FUNCTION() are correct</p>
+            <pre>
+                <code>_.<mark>sortBy</mark>(_.<mark>uniq</mark>( _.<mark>pluck</mark>(chairs, "color")),  "length");</code>
+                <code><mark class="comment">["red", "green", "white"]</mark></code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Functional / Object Oriented</h2>
+            <pre>
+                <code>_.<mark>chain</mark>(chairs)</code>
+                <code>.<mark>pluck</mark>("color")</code>
+                <code>.<mark>uniq</mark>()</code>
+                <code>.<mark>sortBy</mark>("length")</code>
+                <code>.<mark>value</mark>();</code>
+                <code><mark class="comment">["red", "green", "white"]</mark></code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Objects</h2>
+            <p>
+            There are so many functions dedicated to object. Let's just try an example.
+            </p>
+            <pre>
+                <code>var chair = { color: "red", width: 100 };</code>
+                <code>_.<mark>extend</mark>(chair, { color: "green" } );</code>
+                <code><mark class="comment">{ color: "green", width: 100 }</mark></code>
+                <code>_.<mark>defaults</mark>(chair, {color: "white", legs: 4} );</code>
+                <code><mark class="comment">{color: "green", width: 100, legs: 4}</mark></code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Bind / context</h2>
+            <p>Many of Underscore functions have possibility to bind a context (including <code>each</code>).
+You can use <code>bind</code> and <code>bindAll</code> to invoke particular method.</p>
+            <pre>
+                <code>_.bind(function(name) {</code>
+                <code>    return name + " chose " + this.color + " chair."</code>
+                <code>}, chair, "Adam")();</code>
+                <code><mark class="comment">"Adam chose green chair."</mark></code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>_.template</h2>
+            <pre>
+                <code>var templ = _.<mark>template</mark>("&lt;h2&gt;&lt;%= name %&gt; is clever.&lt;/h2&gt;");</code>
+                <code>templ({ name: "Adam" });</code>
+                <code><mark class="comment">&lt;h2&gt;Adam is clever.&lt;/h2&gt;</mark></code>
+            </pre>
+            <ul>
+                <li><code>&lt;% %&gt;</code> executes code</li>
+                <li><code>&lt;%= %&gt;</code> prints value </li>
+                <li><code>&lt;%- %&gt;</code> prints escaped value</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>_.template is customizable</h2>
+            <pre>
+                <code>_.<mark>templateSettings</mark> = {</code>
+                <code>    evaluate: /<\$([\s\S]+?)\$>/g,</code>
+                <code>    interpolate : /{{([\s\S]+?)}}/g,</code>
+                <code>    escape      : /<\$-([\s\S]+?)\$>/g</code>
+                <code>};</code>
+                <code>var templ = _.template("&lt;h2&gt;{{ name }} is clever.&lt;/h2&gt;");</code>
+                <code><mark class="comment">&lt;h2&gt;Adam is clever.&lt;/h2&gt;</mark></code>
+            </pre>
+        </div>
+    </section>
+
+
+    <section class="slide">
+        <div>
+            <h2>More useful stuff</h2>
+            <ul>
+                <li>_.<code>mixin(object)</code> with this function you can extend Underscore</li>
+            </ul>
+            <pre>
+                <code>_.mixin({ addDay: function (string) {</code>
+                <code>    return string + " " + (new Date()).getDay();</code>
+                <code>}});</code>
+            </pre>
+            <pre>
+                <code>_.addDay("today's day number is");</code>
+                <code><mark class="comment">"today's day number is 1"</mark></code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Many helpers</h2>
+            <ul>
+                <li>_.<code>random(min, max)</code> Returns a random integer between min and max.</li>
+                <li>_.<code>shuffle(list)</code> Returns a shuffled copy of the list.</li>
+                <li>_.<code>invert(object)</code> Returns a copy of the object where the keys have become the values and the values the key.</li>
+                <li>_.<code>range([start], stop, [step])</code>  A function to create flexibly-numbered lists of integers.</li>
+                <li>_.<code>pairs(object)</code>  Convert an object into a list of [key, value] pairs.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Other little useful things</h2>
+            <ul>
+                <li>_.<code>isFunction(fn)</code> instead of <code>typeof fn === "function"</code></li>
+                <li>_.<code>has(obj, key)</code> similiar to hasOwnProperty (falsy values safe)</li>
+                <li>_.<code>isEqual(object1, object2)</code> compares two object and checks if they are identical</li>
+                <li>_.<code>noop()</code> instead of <code>function (){return undefined;}</code></li>
+                <li>_.<code>invoke(list, method, *arguments)</code> calls the given method name with every element from the list</li>
+                <li>_.<code>defer(fn)</code> call the function as soon as the call stack is cleared</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Alternatives?</h2>
+            <ul>
+                <li><a href="https://lodash.com/">Lo-Dash</a></li>
+                <li><a href="http://danieltao.com/lazy.js/">Lazy.js</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide cover">
+        <div>
+            <code>What about performance?</code>
+            <img src="./themes/pictures/jsperf_each.jpg" alt="">
+            <a href="http://jsperf.com/underscore-lazy-js-lodash-native">Ask jsPerf!</a>
+        </div>
+    </section>
+
+    <section class="slide shout grow">
+        <div>
+            <h2>Thank you!</h2>
+        </div>
+    </section>
+
+
+
+    <div class="progress">
+        <div></div>
+    </div>
+
+    <script src="vendor/gamepad/gamepad.js"></script>
+    <script src="vendor/shower/shower.js"></script>
+    <script src="vendor/shower/shower.gamepad.js"></script>
+</body>
+</html>
+
